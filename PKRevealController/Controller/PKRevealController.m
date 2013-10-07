@@ -119,6 +119,12 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 {
     self = [super init];
     
+    _ios7flag =  (SYSVER_GE(@"7.0.0"));
+    
+    if (_ios7flag) {
+        NSLog(@"Running on iOS 7 or later.");
+    }
+    
     if (self != nil)
     {
         _frontViewController = frontViewController;
@@ -443,6 +449,8 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 
 - (void)addLeftViewControllerToHierarchy
 {
+    CGRect   lvFrame;
+    
     if (self.leftViewController != nil && ![self.childViewControllers containsObject:self.leftViewController])
     {
         [self addChildViewController:self.leftViewController];
@@ -454,7 +462,19 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
             self.leftViewContainer.autoresizingMask = [self autoresizingMaskForLeftViewContainer];
         }
         
-        self.leftViewContainer.frame = [self leftViewFrame];
+        lvFrame = [self leftViewFrame];
+        if (_ios7flag) {
+            // This is expected to be 20 at all times, except during a phone call, where it's
+            // 40. It's in points, not pixels.
+            int sbHeightInPoints = [UIApplication sharedApplication].statusBarFrame.size.height;
+            if (sbHeightInPoints<20) {
+                sbHeightInPoints = 20;
+            };
+            lvFrame.origin.y += sbHeightInPoints; // ugly hack demo code only! don't really do it this badly!
+            lvFrame.size.height -= sbHeightInPoints;
+            
+        };
+        self.leftViewContainer.frame = lvFrame;
         [self.view insertSubview:self.leftViewContainer belowSubview:self.frontViewContainer];
         [self.leftViewController didMoveToParentViewController:self];
     }
@@ -1497,5 +1517,7 @@ NS_INLINE void safelyExecuteCompletionBlockOnMainThread(PKDefaultCompletionHandl
         dispatch_async(dispatch_get_main_queue(), executeBlock);
     }
 }
+
+
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF71BBB61802FC81006C52F0 /* sample_image.png in Resources */ = {isa = PBXBuildFile; fileRef = EF71BBB51802FC81006C52F0 /* sample_image.png */; };
 		F932019016B85E56001C2B3E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F932018F16B85E56001C2B3E /* Default-568h@2x.png */; };
 		F94D66F116AE1C1200F0DAE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F94D66E916AE1C1200F0DAE3 /* InfoPlist.strings */; };
 		F94D66F216AE1C1200F0DAE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F94D66EB16AE1C1200F0DAE3 /* main.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF71BBB51802FC81006C52F0 /* sample_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample_image.png; sourceTree = "<group>"; };
+		EF71BBB718031142006C52F0 /* vermacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = vermacros.h; path = Controller/vermacros.h; sourceTree = "<group>"; };
 		F932018F16B85E56001C2B3E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		F94D66EA16AE1C1200F0DAE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F94D66EB16AE1C1200F0DAE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Supporting Files/main.m"; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				F94D66F416AE1C5800F0DAE3 /* PKRevealController.h */,
+				EF71BBB718031142006C52F0 /* vermacros.h */,
 				F94D66F516AE1C5800F0DAE3 /* PKRevealController.m */,
 				F94D66F716AE1C6200F0DAE3 /* PKRevealControllerContainerView.h */,
 				F94D66F816AE1C6200F0DAE3 /* PKRevealControllerContainerView.m */,
@@ -115,6 +119,7 @@
 		F9DD514816A973DC00F392F1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EF71BBB51802FC81006C52F0 /* sample_image.png */,
 				F932018F16B85E56001C2B3E /* Default-568h@2x.png */,
 				F9FCBE8816AF46B000DB38FA /* reveal_menu_icon_landscape.png */,
 				F9FCBE8916AF46B000DB38FA /* reveal_menu_icon_landscape@2x.png */,
@@ -239,6 +244,7 @@
 				F9FCBE8D16AF46B000DB38FA /* reveal_menu_icon_landscape@2x.png in Resources */,
 				F9FCBE8E16AF46B000DB38FA /* reveal_menu_icon_portrait.png in Resources */,
 				F9FCBE8F16AF46B000DB38FA /* reveal_menu_icon_portrait@2x.png in Resources */,
+				EF71BBB61802FC81006C52F0 /* sample_image.png in Resources */,
 				F932019016B85E56001C2B3E /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +343,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PKRevealController/Supporting Files/PKRevealController-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/PKRevealController/Supporting Files/PKRevealController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = app;
@@ -350,7 +356,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PKRevealController/Supporting Files/PKRevealController-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/PKRevealController/Supporting Files/PKRevealController-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = app;

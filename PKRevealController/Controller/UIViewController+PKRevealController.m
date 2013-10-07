@@ -28,4 +28,12 @@ static char revealControllerKey;
     return (PKRevealController *)objc_getAssociatedObject(self, &revealControllerKey);
 }
 
+
+
+// iOS 7 hack : causes warning : semantic issue about category implementing a method implemented by its primary class.
+// iOS 7 hack?
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleBlackOpaque;
+}
+
 @end

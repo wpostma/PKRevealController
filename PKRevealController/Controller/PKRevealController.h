@@ -11,7 +11,11 @@
  */
 
 #import <UIKit/UIKit.h>
+
 #import "UIViewController+PKRevealController.h"
+
+#include "vermacros.h"
+
 
 typedef NS_ENUM(NSUInteger, PKRevealControllerState)
 {
@@ -130,6 +134,7 @@ typedef void(^PKDefaultErrorHandler)(NSError *error);
 @property (nonatomic, assign, readwrite) BOOL disablesFrontViewInteraction;
 @property (nonatomic, assign, readwrite) BOOL recognizesPanningOnFrontView;
 @property (nonatomic, assign, readwrite) BOOL recognizesResetTapOnFrontView;
+@property (nonatomic, assign,readwrite) BOOL  ios7flag;
 
 #pragma mark - Methods
 

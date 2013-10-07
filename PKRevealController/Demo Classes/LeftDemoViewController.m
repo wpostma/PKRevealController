@@ -65,4 +65,12 @@
     return YES;
 }
 
+
+// iOS 7 hack?
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleBlackOpaque;
+}
+
+
+
 @end

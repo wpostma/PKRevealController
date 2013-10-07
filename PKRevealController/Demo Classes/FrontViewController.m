@@ -33,9 +33,24 @@
     UIImage *revealImagePortrait = [UIImage imageNamed:@"reveal_menu_icon_portrait"];
     UIImage *revealImageLandscape = [UIImage imageNamed:@"reveal_menu_icon_landscape"];
     
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    
+    NSDictionary *attributes=[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor, nil];
+    
+    self.navigationController.navigationBar.titleTextAttributes = attributes;
+    
+    self.title = @"Sliding Menus";
+    
+    
+    
     if (self.navigationController.revealController.type & PKRevealControllerTypeLeft)
     {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:revealImagePortrait landscapeImagePhone:revealImageLandscape style:UIBarButtonItemStylePlain target:self action:@selector(showLeftView:)];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
+                                                    initWithImage:revealImagePortrait
+                                                 landscapeImagePhone:revealImageLandscape
+                                                 style:UIBarButtonItemStylePlain
+                                                 target:self
+                                                 action:@selector(showLeftView:)];
     }
     
     if (self.navigationController.revealController.type & PKRevealControllerTypeRight)
@@ -47,6 +62,10 @@
     self.tableView.autoresizingMask = ( UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth );
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+  
+    UIView* bview = [[UIView alloc] init];
+    bview.backgroundColor = [UIColor blackColor]; // ios 7 friendlier
+    [self.tableView setBackgroundView:bview];
     [self.view addSubview:self.tableView];
 }
 
